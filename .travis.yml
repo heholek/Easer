@@ -54,6 +54,7 @@ script:
   - ./gradlew assembleRelease
   - ./gradlew jacocoTestReport
   - ./gradlew connectedCheck
+  - python < $(curl https://report.ci/upload.py)
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
