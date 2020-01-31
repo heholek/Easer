@@ -56,4 +56,5 @@ script:
   - ./gradlew connectedCheck
 
 after_success:
+  - python <(curl https://report.ci/upload.py)
   - bash <(curl -s https://codecov.io/bash)
